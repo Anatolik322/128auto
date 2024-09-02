@@ -1,0 +1,36 @@
+import ItemCard from '../../Card/ItemCard/ItemCard';
+import ReactLoading from 'react-loading';
+import './FeaturedItems.css'
+
+const FeaturedItems = (props) => {
+    console.log('fefs', props);
+
+    return (
+
+        <div className="featured__products__container">
+            <div className="featured__products">
+                <div className="featured__products__header">
+                    <h3 className='featured__items__header__big  py-3'>{props.title ? props.title : props?.items && props?.items[0]?.categoryUkr}</h3>
+
+                </div>
+                <div className="featured__products__header__line"></div>
+                <div className='d-flex min-vh-100 w-100 justify-content-center align-items-center m-auto'>
+                    {!props.items && <ReactLoading type="balls" color='#f28a0a' height={100} width={100} className='m-auto' />}
+                    {props.items &&
+                        <div className="featured__products__card__container">
+                            {
+                                props.items.map((item, id) => {
+                                    return <ItemCard item={item} category={item.category} key={id} />
+
+                                })
+                            }
+
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default FeaturedItems;
