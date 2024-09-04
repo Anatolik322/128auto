@@ -6,6 +6,7 @@ import CartItemsProvider from '../Context/CartItemsProvider';
 import WishItemsProvider from '../Context/WishItemsProvider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import OrderForm from '../components/Order/Order';
 
 const Home = lazy(() => import('../routes/Home'));
 const Header = lazy(() => import('../components/Header/Header'));
@@ -27,6 +28,7 @@ function App() {
               <Route path="/shop" element={<Shop />} />
               <Route path="/category/:id" element={<CategoryView />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/order" element={<OrderForm />} />
             </Routes>
             <Footer />
           </Suspense>

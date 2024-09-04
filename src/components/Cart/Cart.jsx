@@ -1,6 +1,7 @@
 import React from "react";
 import useCartStore from "../../zustand/store";
 import CartCard from "../Card/Cart/CartCard/CartCard";
+import { Link } from "react-router-dom";
 function Cart() {
   const cart = useCartStore((state) => state.cart);
 
@@ -11,12 +12,11 @@ function Cart() {
           <span className="text-lg font-bold">Загальна сума:</span>
           <span className="text-xl font-semibold text-gray-800">1,234 грн</span>
         </div>
-        <button
-          className="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50"
-          onClick={() => alert("Оформлення замовлення")}
-        >
-          Оформити замовлення
-        </button>
+        <Link to="/order">
+          <button className="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
+            Оформити замовлення
+          </button>
+        </Link>
       </div>
       {cart.length ? (
         <div className=" grid sm:grid-cols-2 grid-cols-1 fldex flex-row flex-wrap gap-[15px] justify-start py-10 px-4">
