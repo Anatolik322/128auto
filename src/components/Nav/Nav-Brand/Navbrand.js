@@ -5,7 +5,7 @@ const NavBrand = () => {
     return (
         <div href="#home" className='navbrand__containers !w-fit'>
             <div className=' text-[30px] text-[#302626] !w-fit'>
-                <Link to="/"><img src={logo} className=' h-[40px]'></img></Link>
+                <Link to="/"><img src={logo} className=' h-[40px]' alt='128auto'></img></Link>
             </div>
         </div>
     );

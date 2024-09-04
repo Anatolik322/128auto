@@ -1,5 +1,4 @@
 import './Landing.css'
-import land from '../../asset/brand/men2.png'
 import { Link } from "react-router-dom"
 import { Button } from "@mui/material";
 import vacum from "./test.png"
@@ -12,7 +11,7 @@ const Landing = () => {
                     <h3 className="landing__header__discount font-bold">До 15% знижки</h3>
                     <h1 className="landing__header__main !text-[50px] !sm:text-[72px]">Прокачайте свій автомобіль разом з нами!</h1>
                     <Link to="/category/car_vacuums">
-                        <Button variant='outlined' sx={[{ width: '190px', marginTop: '10px', height: '50px', borderRadius: '20px', fontWeight: '700', backgroundColor: 'none', borderColor: '#fff', color: '#fff', marginTop: '15px' }, { '&:hover': { backgroundColor: "white", color: "#F28A0A", borderColor: '#fff' } }]}>Перейти</Button>
+                        <Button variant='outlined' sx={[{ width: '190px', height: '50px', borderRadius: '20px', fontWeight: '700', backgroundColor: 'none', borderColor: '#fff', color: '#fff', marginTop: '15px' }, { '&:hover': { backgroundColor: "white", color: "#F28A0A", borderColor: '#fff' } }]}>Перейти</Button>
                     </Link>
                 </div>
             </div>

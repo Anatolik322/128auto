@@ -36,8 +36,8 @@
     width: 150px;
     height: 6px;
     background-color: #f28a0a;
-    align-self: flex-start;
-    margin-left: 50px;
+    /* align-self: flex-start; */
+    /* margin-left: 50px; */
     border-radius: 25px;
 }
 

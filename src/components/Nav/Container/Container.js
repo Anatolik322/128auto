@@ -1,12 +1,11 @@
 import Control from '../Controls/Control';
 import DrawerNav from '../DrawerNav/DrawerNav';
 import NavBrand from '../Nav-Brand/Navbrand';
-import Form from '../Search-Bar/Form';
 import './Container.css'
 
 const Navtop = () => {
     return (
-        <div className="nav__top__container px-4">
+        <div className="nav__top__container px-4 ">
             <div className="top__container flex flex-row items-center justify-between font-serif font-bold">
                 <NavBrand />
                 {/* <div className="form__container">

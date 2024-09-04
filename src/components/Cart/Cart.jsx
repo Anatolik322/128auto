@@ -1,7 +1,6 @@
 import React from "react";
 import useCartStore from "../../zustand/store";
 import CartCard from "../Card/Cart/CartCard/CartCard";
-import ItemCard from "../Card/ItemCard/ItemCard";
 function Cart() {
   const cart = useCartStore((state) => state.cart);
 

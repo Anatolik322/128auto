@@ -1,23 +1,14 @@
-import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { CartItemsContext } from "../../../Context/CartItemsContext";
-import { WishItemsContext } from '../../../Context/WishItemsContext';
+
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import './ItemCard.css'
-import { Card, CardActions, CardContent, CardMedia, Button, Typography, IconButton } from '@mui/material';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
 import useCartStore from "../../../zustand/store";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 
 const ItemCard = (props) => {
-    const [isHovered, setIsHovered] = useState(false);
-    const cartItemsContext = useContext(CartItemsContext);
-    const wishItemsContext = useContext(WishItemsContext);
 
     const addProduct = useCartStore((state) => state.addProduct);
-    const cart = useCartStore((state) => state.cart);
-
     return (
         <Card sx={{ maxWidth: 345, margin: '0 auto', borderRadius: 2, boxShadow: 3, bgcoloddr: "#A9A9A9" }}>
             <CardMedia
@@ -40,9 +31,6 @@ const ItemCard = (props) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <IconButton aria-label="add to wishlist" color="primary">
-                    <FavoriteBorderIcon />
-                </IconButton>
                 <Button variant="contained" color="primary" sx={{
                     backgroundColor: '#f28a0a', '&:hover': {
                         backgroundColor: 'rgba(242, 138, 10, 0.7)',

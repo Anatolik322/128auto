@@ -1,13 +1,9 @@
-import { useContext } from "react";
-import { FeatureCategoryContext } from "../../../Context/FeaturedCategoryContext";
+
 import CategoryCard from "../../Card/FeaturedCard/CategoryCard";
 import './FeaturedCategories.css'
 import useFetchItems from "../../../hooks/FetchItemsHook";
-import pylosos from '../../../asset/pylosos.jpg'
 const Categories = () => {
-    const featuredCategories = useContext(FeatureCategoryContext)
     const { data } = useFetchItems('/items/categories');
-    // console.log('eeeeddd', data);
 
     return (
         <div className="featured__categories__container">
