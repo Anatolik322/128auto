@@ -3,7 +3,7 @@ import { FeatureCategoryContext } from "../../../Context/FeaturedCategoryContext
 import CategoryCard from "../../Card/FeaturedCard/CategoryCard";
 import './FeaturedCategories.css'
 import useFetchItems from "../../../hooks/FetchItemsHook";
-
+import pylosos from '../../../asset/pylosos.jpg'
 const Categories = () => {
     const featuredCategories = useContext(FeatureCategoryContext)
     const { data } = useFetchItems('/items/categories');
@@ -13,20 +13,13 @@ const Categories = () => {
         <div className="featured__categories__container">
             <div className="featured__categories">
                 <div className="featured__categories__header">
-                    <h1 className='featured__header__big'>Категорії </h1>
+                    <h1 className='featured__header__big'>Категорії</h1>
                     <div className="featured__categories__header__line"></div>
                 </div>
                 <div className="featured__categories__card__container">
-                    {/* {featuredCategories.map((category) => {
-                        console.log('ddddddd', category);
-
-                        return <CategoryCard key={category.id} data={category} />
-                    }
-                    )} */}
-
-                    <CategoryCard key={'32323gregre2'} data={{ name: 'Пилососи', img: '/assets/aromat.jpg', url: '/fefsfsf' }} />
-                    <CategoryCard key={'32323gre2'} data={{ name: 'Пилососи', img: '/assets/aromat.jpg', url: '/fefsfsf' }} />
-                    <CategoryCard key={'323greg232'} data={{ name: 'Пилососи', img: '/assets/aromat.jpg', url: '/fefsfsf' }} />
+                    <CategoryCard key={'32323gregre2'} data={{ name: 'Пилососи', img: 'asset/pylosos.jpg', url: '/category/car_vacuums' }} />
+                    <CategoryCard key={'32323gre2'} data={{ name: 'Хімія для догляду', img: '/assets/aromat.jpg', url: '/category/care_chemicals' }} />
+                    <CategoryCard key={'323greg232'} data={{ name: 'Обладнання', img: '/assets/aromat.jpg', url: '/category/vacuum_attachments' }} />
                 </div>
             </div>
         </div>

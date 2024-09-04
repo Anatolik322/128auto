@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ReactLoading from "react-loading";
 import useFetchItems from "../hooks/FetchItemsHook";
 import FeaturedItems from "../components/Featured/Items/FetauredItems";
+import ItemCard from "../components/Card/ItemCard/ItemCard";
 
 const CategoryView = () => {
   const param = useParams();
@@ -25,8 +26,10 @@ const CategoryView = () => {
   //     window.scrollTo(0, 0)
   // }, [param.id])
   const { data, isLoading } = useFetchItems(`/category/${param.id}`);
+  data && console.log(data, "dwada");
+
   return (
-    <div className="d-flex min-vh-100 w-100 justify-content-center align-items-center m-auto">
+    <div className=" min-vh-100 w-100 justify-content-center align-items-center m-auto">
       {isLoading && (
         <ReactLoading
           type="balls"
@@ -36,12 +39,18 @@ const CategoryView = () => {
           className="m-auto"
         />
       )}
-      <div>
-        {/* {data &&
-          data.map((item) => {
-            return <FeaturedItems items={data}></FeaturedItems>;
-          })} */}
-        <FeaturedItems items={data} />
+      <div className="featured__products__headerd flex !flex-col justify-center items-center !my-10">
+        <h3 className="featured__items__header__big  py-3">
+          {data && data[0] && data[0].categoryUkr}
+        </h3>
+        <div className="featured__products__header__line"></div>
+      </div>
+      <div className="flex flex-row gap-10 flex-wrap pb-10">
+        {/* <FeaturedItems items={data} /> */}
+        {data &&
+          data?.map((item, id) => {
+            return <ItemCard item={item} category={item.category} key={id} />;
+          })}
       </div>
     </div>
   );

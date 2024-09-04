@@ -1,77 +1,49 @@
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import { useContext, useState } from 'react';
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import useCartStore from '../../../../zustand/store';
 import './CartCard.css';
-import { CartItemsContext } from '../../../../Context/CartItemsContext';
-import { IconButton } from '@mui/material';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+
 
 const CartCard = (props) => {
-    let cartItems  = useContext(CartItemsContext)
-    const [size, setSize] = useState(props.item.size[0]);
+    console.log(props);
 
-    const handelQuantityIncrement = (event) => {
-        cartItems.quantity(props.item.id, 'INC');
-    };
-
-    const handelQuantityDecrement = (event) => {
-        if(props.item.itemQuantity >1){
-            cartItems.quantity(props.item.id, 'DEC');
-        }
-    };
-
-    const handelRemoveItem = () => {
-        cartItems.removeItem(props.item)
+    const removeFromCart = useCartStore((state) => state.removeProduct);
+    const handdleRemove = (productId) => {
+        removeFromCart(productId);
     }
-
-    const handleSizeChange = (event) => {
-        setSize(event.target.value);
-    };
-
     return (
-        <div className='cart__item__card'>
-            <div className="cart__item__detail">
-                <div className="cart__item__image">
-                    <img src={`https://shema-ecommerce.herokuapp.com/${props.item.category}/${props.item.image[0].filename}`} alt="item" className="item__image"/>
+        <div className="flex justify-between items-center p-2.5  border border-gray-300 rounded-lg bg-white shadow-md ">
+            <div className="flex items-center">
+                <img
+                    src={props.product.images[0]}
+                    alt={props.product.name}
+                    className="w-20 h-20 mr-3.5 object-cover rounded-lg"
+                />
+                <div className=' h-fit'>
+                    <h3 className="mb-1 text-lg font-bold text-black">{props.product.name}</h3>
+                    <p className="m-0 text-sm text-gray-600">Бренд: {props.product.brand}</p>
+                    <p className="m-0 text-sm text-gray-600">Категорія: {props.product.categoryUkr}</p>
+                    <p className="m-0 text-sm text-gray-600">Артикул: {props.product.sku}</p>
+                    <p className="mt-1 text-sm text-orange-600">
+                        {props.product.discountedPrice ? (
+                            <>
+                                <span className="line-through text-gray-400">{props.product.price} грн</span>
+                                <span className="ml-2.5">{props.product.discountedPrice} грн</span>
+                            </>
+                        ) : (
+                            `${props.product.price} грн`
+                        )}
+                    </p>
                 </div>
-                <div className="cart__item__name">{props.item.name}</div>
             </div>
-            <div className="cart__item__quantity">
-                <IconButton onClick={handelQuantityIncrement}>
-                    <AddCircleIcon />
-                </IconButton>
-                <div type="text" name="quantity" className="quantity__input">{props.item.itemQuantity}</div>
-                <IconButton onClick={handelQuantityDecrement}>
-                    <RemoveCircleIcon fontSize='medium'/>
-                </IconButton>
-            </div>
-            <div className="product size">
-                <Box sx={{ minWidth: 80} }>
-                    <FormControl fullWidth size="small">
-                        <InputLabel>Size</InputLabel>
-                        <Select
-                        value={size}
-                        label="size"
-                        onChange={handleSizeChange}
-                        >
-                        {props.item.size.map((size) => <MenuItem value={size}>{size}</MenuItem>)}
-                        </Select>
-                    </FormControl>
-                </Box>
-            </div>
-            <div className="cart__item__price">${props.item.price}</div>
-            <div className="remove__item__icon">
-                <IconButton>
-                    <HighlightOffIcon onClick={handelRemoveItem}/>
-                </IconButton>
+            <div className="text-center">
+                <p className="mb-1 text-sm">Кількість: {props.product.quantity}</p>
+                <button className="px-3 py-2 bg-orange-600 text-white border-none rounded cursor-pointer"
+                    onClick={() => handdleRemove(props.product._id)}>
+                    Видалити
+                </button>
             </div>
         </div>
-     );
+
+    );
 }
- 
+
 export default CartCard;

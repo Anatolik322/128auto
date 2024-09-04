@@ -13,6 +13,15 @@
     align-items: center;
 }
 
+/* 
 body {
     background-color: #242424;
+    position: relative;
+    background-color: #fff;
+} */
+
+
+
+a {
+    text-decoration: none;
 }

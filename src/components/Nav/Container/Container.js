@@ -5,22 +5,23 @@ import Form from '../Search-Bar/Form';
 import './Container.css'
 
 const Navtop = () => {
-    return ( 
-            <div className="nav__top__container">
-                <div className="top__container">
-                    <NavBrand />
-                    <div className="form__container">
+    return (
+        <div className="nav__top__container px-4">
+            <div className="top__container flex flex-row items-center justify-between font-serif font-bold">
+                <NavBrand />
+                {/* <div className="form__container">
                         <Form />
-                    </div>
-                    <div className="control__bar">
-                        <Control />
-                    </div>
-                    <div className="drawer">
-                        <DrawerNav />
-                    </div>
+                    </div> */}
+                <h1 className=' text-black !m-0  sm:text-[18px] text-[12px] w-fit sm:block hidden'>Тільки для своїх</h1>
+                <div className="control__bar">
+                    <Control />
+                </div>
+                <div className="drawer">
+                    <DrawerNav />
                 </div>
             </div>
-     );
+        </div>
+    );
 }
- 
+
 export default Navtop;

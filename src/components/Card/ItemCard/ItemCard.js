@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartItemsContext } from "../../../Context/CartItemsContext";
 import { WishItemsContext } from '../../../Context/WishItemsContext';
@@ -6,6 +6,8 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import './ItemCard.css'
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, IconButton } from '@mui/material';
+import useCartStore from "../../../zustand/store";
+import { toast, ToastContainer } from "react-toastify";
 
 
 const ItemCard = (props) => {
@@ -13,16 +15,8 @@ const ItemCard = (props) => {
     const cartItemsContext = useContext(CartItemsContext);
     const wishItemsContext = useContext(WishItemsContext);
 
-    const handleAddToWishList = () => {
-        wishItemsContext.addItem(props.item);
-    };
-
-    const handleAddToCart = () => {
-        cartItemsContext.addItem(props.item, 1);
-    };
-
-    console.log('card', props);
-
+    const addProduct = useCartStore((state) => state.addProduct);
+    const cart = useCartStore((state) => state.cart);
 
     return (
         <Card sx={{ maxWidth: 345, margin: '0 auto', borderRadius: 2, boxShadow: 3, bgcoloddr: "#A9A9A9" }}>
@@ -49,8 +43,24 @@ const ItemCard = (props) => {
                 <IconButton aria-label="add to wishlist" color="primary">
                     <FavoriteBorderIcon />
                 </IconButton>
-                <Button variant="contained" color="primary" sx={{ backgroundColor: '#f28a0a' }} startIcon={<AddShoppingCartIcon />}>
-                    Add to Cart
+                <Button variant="contained" color="primary" sx={{
+                    backgroundColor: '#f28a0a', '&:hover': {
+                        backgroundColor: 'rgba(242, 138, 10, 0.7)',
+                    },
+                }} startIcon={<AddShoppingCartIcon />}
+                    onClick={() => {
+                        addProduct(props.item);
+                        toast.success("Товар додано в корзину!", {
+                            position: "top-right",
+                            autoClose: 3000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                        });
+                    }}>
+                    Додати в корзину
                 </Button>
             </CardActions>
         </Card>

@@ -9,8 +9,8 @@ const NavLinks = () => {
         <nav className="nav__bottom__container">
             <div className="bottom__container">
                 <ul className="nav">
-                    {data && data.map(item => {
-                        return <li className='nav-link'><Link to={`/category/${item?.category}`}>{item?.categoryUkr}</Link></li>
+                    {data && data.map((item, id) => {
+                        return <li className='nav-link' key={id}><Link to={`/category/${item?.category}`}>{item?.categoryUkr}</Link></li>
                     })}
                 </ul>
             </div>

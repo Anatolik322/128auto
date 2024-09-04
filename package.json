@@ -22,8 +22,10 @@
     "react-loading": "^2.0.3",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
+    "react-toastify": "^10.0.5",
     "uuid": "^8.3.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zustand": "^4.5.5"
   },
   "scripts": {
     "start": "react-scripts start",

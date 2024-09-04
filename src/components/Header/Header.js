@@ -3,12 +3,12 @@ import Navtop from '../Nav/Container/Container';
 import './Header.css'
 
 const Header = () => {
-    return ( 
+    return (
         <div className='header__container'>
             <Navtop />
             <Navbottom />
         </div>
-     );
+    );
 }
- 
+
 export default Header;

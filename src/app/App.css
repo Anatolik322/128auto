@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@500&family=Ubuntu:wght@500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -12,4 +15,16 @@ a {
 
 a:hover {
     text-decoration: none;
+}
+
+html,
+body,
+#root {
+    width: 100% !important;
+    /* min-height: 100% !important; */
+    height: 100% !important;
+    background-color: #242424;
+
+    margin: 0;
+    padding: 0;
 }

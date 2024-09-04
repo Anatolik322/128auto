@@ -9,8 +9,8 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 
 const Footer = () => {
-    return ( 
-        <footer>
+    return (
+        <footer className=' absolufte bottjom-[0px] w-full'>
             <div className="footer__container">
                 <div className="footer__items__container">
                     <div className="footer__help__container">
@@ -52,7 +52,7 @@ const Footer = () => {
                         <div className="footer__social__link__header">
                             <h1>Stay Connected</h1>
                         </div>
-                    <ul className="footer__social__links">
+                        <ul className="footer__social__links">
                             <li className="social__link">
                                 <TwitterIcon />
                             </li>
@@ -77,10 +77,10 @@ const Footer = () => {
                         <li className="footer__terms__condition"> | Terms & Condition |</li>
                         <li className="footer__privacy__policy">| Privacy Policy</li>
                     </ul>
-                     </div>
+                </div>
             </div>
         </footer>
-     );
+    );
 }
- 
+
 export default Footer;

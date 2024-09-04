@@ -22,11 +22,17 @@ import Checkout from '../components/Checkout/Checkout';
 import SearchProvider from '../Context/SearchProvider';
 import { ChakraProvider } from '@chakra-ui/react';
 import ProductView from '../routes/ItemView';
+import Cart from '../components/Cart/Cart';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
 
   return (
 
     <CartItemsProvider>
+      <ToastContainer />
+
       <WishItemsProvider>
         <SearchProvider>
           <Router >
@@ -60,14 +66,17 @@ function App() {
               </Route>
               <Route path="/wishlist" element={<Wishlist />} />
               <Route path="/search/*" element={<SearchView />} />
+              <Route path="/cart" element={<Cart />} />
             </Routes>
-            <Footer />
             <Routes>
               <Route path="/admin" element={<Wishlist />} />
             </Routes>
+            <Footer />
+
           </Router>
         </SearchProvider>
       </WishItemsProvider>
+
     </CartItemsProvider>
   );
 }
