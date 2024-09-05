@@ -16,9 +16,9 @@ const Landing = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-        }, 2000); // Change image every 3 seconds
+        }, 3000);
 
-        return () => clearInterval(intervalId); // Cleanup interval on component unmount
+        return () => clearInterval(intervalId);
     }, []);
 
     return (
@@ -59,7 +59,7 @@ const Landing = () => {
             </div>
             <div className="landing__image__container flex justify-center !h-[600px] !pt-[100px] p-[50px]">
                 <img
-                    className="landing__image transition-opacity duration-1000 ease-in-out    "
+                    className="landing__image transition-opacity duration-1000 ease-in-out !h-[400px] "
                     src={images[currentImage]}
                     alt="car vacuum"
                 />

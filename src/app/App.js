@@ -6,6 +6,7 @@ import CartItemsProvider from '../Context/CartItemsProvider';
 import WishItemsProvider from '../Context/WishItemsProvider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ProductPage from '../components/ProductPage/ProductPage';
 
 const Home = lazy(() => import('../routes/Home'));
 const Header = lazy(() => import('../components/Header/Header'));
@@ -26,6 +27,7 @@ function App() {
             <Routes>
               <Route index element={<Home />} />
               <Route path="/category/:id" element={<CategoryView />} />
+              <Route path="/item/:id" element={<ProductPage />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/order" element={<OrderForm />} />
               <Route path="/thanks" element={<ThankYou />} />
