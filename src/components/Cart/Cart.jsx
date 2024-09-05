@@ -19,20 +19,22 @@ function Cart() {
   };
 
   return (
-    <div className="h-[100vh]">
-      <div className="bg-white p-4 rounded-lg shadow-md mt-5 w-[80%] mx-auto">
-        <div className="flex justify-between items-center mb-4">
-          <span className="text-lg font-bold">Загальна сума:</span>
-          <span className="text-xl font-semibold text-gray-800">
-            {orderSum()} грн
-          </span>
+    <div className="sm:hd-[100vh] h-fit">
+      {cart?.length > 0 && (
+        <div className="bg-white p-4 rounded-lg shadow-md mt-5 w-[80%] mx-auto">
+          <div className="flex justify-between items-center mb-4">
+            <span className="text-lg font-bold">Загальна сума:</span>
+            <span className="text-xl font-semibold text-gray-800">
+              {orderSum()} грн
+            </span>
+          </div>
+          <Link to="/order">
+            <button className="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
+              Оформити замовлення
+            </button>
+          </Link>
         </div>
-        <Link to="/order">
-          <button className="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
-            Оформити замовлення
-          </button>
-        </Link>
-      </div>
+      )}
       {cart.length ? (
         <div className=" grid sm:grid-cols-2 grid-cols-1 fldex flex-row flex-wrap gap-[15px] justify-start py-10 px-4">
           {cart.map((item) => {
