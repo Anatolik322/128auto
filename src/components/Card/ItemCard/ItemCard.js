@@ -27,9 +27,10 @@ const ItemCard = (props) => {
     }
 
     return (
-        <Link to={`/item/${props.item._id}`}>
-            <Card sx={{ maxWidth: 345, margin: '0 auto', borderRadius: 2, boxShadow: 3, bgcoloddr: "#A9A9A9" }}>
-                <ToastContainer />
+
+        <Card sx={{ maxWidth: 345, margin: '0 auto', borderRadius: 2, boxShadow: 3, bgcoloddr: "#A9A9A9" }}>
+            <ToastContainer />
+            <Link to={`/item/${props.item._id}`}>
                 <CardMedia
                     component="img"
                     height="200"
@@ -37,6 +38,9 @@ const ItemCard = (props) => {
                     image={Image}
                     alt={props.item.name}
                 />
+            </Link>
+            <Link to={`/item/${props.item._id}`}>
+
                 <CardContent>
                     <Typography gutterBottom variant="h6" component="div">
                         {props.item.name.length > 25
@@ -50,20 +54,20 @@ const ItemCard = (props) => {
                         ${props.item.price}
                     </Typography>
                 </CardContent>
-                <CardActions>
-                    <Button variant="contained" color="primary" sx={{
-                        backgroundColor: '#f28a0a', '&:hover': {
-                            backgroundColor: 'rgba(242, 138, 10, 0.7)',
-                        },
-                    }} startIcon={<AddShoppingCartIcon />}
-                        onClick={() => {
-                            addToCart(props.item)
-                        }}>
-                        Додати в корзину
-                    </Button>
-                </CardActions>
-            </Card>
-        </Link>
+            </Link>
+            <CardActions>
+                <Button variant="contained" color="primary" sx={{
+                    backgroundColor: '#f28a0a', '&:hover': {
+                        backgroundColor: 'rgba(242, 138, 10, 0.7)',
+                    },
+                }} startIcon={<AddShoppingCartIcon />}
+                    onClick={() => {
+                        addToCart(props.item)
+                    }}>
+                    Додати в корзину
+                </Button>
+            </CardActions>
+        </Card>
     );
 };
 

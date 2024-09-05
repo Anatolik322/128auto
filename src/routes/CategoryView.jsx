@@ -28,7 +28,7 @@ const CategoryView = () => {
             </h3>
             <div className="featured__products__header__line"></div>
           </div>
-          <div className="flex flex-row gap-10 flex-wrap pb-10">
+          <div className="flex flex-row gap-10 flex-wrap pb-10 justify-center">
             {/* <FeaturedItems items={data} /> */}
             {data &&
               data?.map((item, id) => {

@@ -27,7 +27,9 @@ const ProductPage = () => {
   };
 
   const { data: product, isLoading } = useFetchItems(`/items/${id}`);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   if (isLoading) {
     return (
       <div className="h-[850px]">
@@ -51,7 +53,7 @@ const ProductPage = () => {
           color="#f2f2f2"
           height={100}
           width={100}
-          className="mx-auto mt-5 w-20"
+          className="mx-auto mt-[100px] w-20 z-20"
         />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

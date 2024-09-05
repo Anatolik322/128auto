@@ -21,7 +21,7 @@ function Cart() {
   return (
     <div className="sm:hd-[100vh] h-fit">
       {cart?.length > 0 && (
-        <div className="bg-white p-4 rounded-lg shadow-md mt-5 w-[80%] mx-auto">
+        <div className="bg-white p-4 rounded-lg shadow-md mt-[100px] w-[80%] mx-auto">
           <div className="flex justify-between items-center mb-4">
             <span className="text-lg font-bold">Загальна сума:</span>
             <span className="text-xl font-semibold text-gray-800">
