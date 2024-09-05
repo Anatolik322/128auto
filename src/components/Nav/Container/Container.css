@@ -2,7 +2,7 @@
     height: 70px;
     width: 100%;
     display: flex;
-    
+
 }
 
 .top__container {
@@ -44,19 +44,22 @@
     .nav__top__container {
         height: auto;
     }
+
     .form__container {
         display: none;
     }
+
     .top__container {
         justify-content: space-between;
     }
 }
 
 @media screen and (max-width: 780px) {
-    .control__bar{
+
+    /* .control__bar{
        display: none;
-    }
-    .drawer{
+    } */
+    .drawer {
         display: flex;
     }
 }

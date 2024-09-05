@@ -3,11 +3,15 @@ import ReactLoading from "react-loading";
 import useFetchItems from "../hooks/FetchItemsHook";
 import ItemCard from "../components/Card/ItemCard/ItemCard";
 import "../components/Featured/Items/FeaturedItems.css";
+import { useEffect } from "react";
 const CategoryView = () => {
   const param = useParams();
   const { data, isLoading } = useFetchItems(`/category/${param.id}`);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <div className=" min-vh-100 w-100 justify-content-center align-items-center m-auto">
+    <div className=" min-vh-100 w-100 justify-content-center align-items-center m-auto pt-[120px]">
       {isLoading || !data ? (
         <ReactLoading
           type="cylon"

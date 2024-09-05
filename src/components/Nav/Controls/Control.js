@@ -8,13 +8,13 @@ const Control = () => {
     const cart = useCartStore((state) => state.cart);
 
     return (
-        <div className="control__bar__container">
-            <div className="controls__container">
-                <div className="control">
+        <div className="control__bar__contsainer">
+            <div className="controls__containfer">
+                {/* <div className="control">
                     <Link to="/account/login">
                         <PersonOutlineIcon color="black" size="large" sx={{ width: '35px' }} />
                     </Link>
-                </div>
+                </div> */}
 
                 <div className="control relative">
                     {

@@ -3,18 +3,36 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import './ItemCard.css'
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
 import useCartStore from "../../../zustand/store";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import Image from "../../../asset/1122.jpg"
 
 
 const ItemCard = (props) => {
 
     const addProduct = useCartStore((state) => state.addProduct);
+
+    const addToCart = (item) => {
+
+        toast.success("Товар додано в корзину!", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+        });
+        addProduct(item);
+    }
+
     return (
         <Card sx={{ maxWidth: 345, margin: '0 auto', borderRadius: 2, boxShadow: 3, bgcoloddr: "#A9A9A9" }}>
+            <ToastContainer />
             <CardMedia
                 component="img"
                 height="200"
-                image={'https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg'}
+                // image={'https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg'}
+                image={Image}
                 alt={props.item.name}
             />
             <CardContent>
@@ -37,16 +55,7 @@ const ItemCard = (props) => {
                     },
                 }} startIcon={<AddShoppingCartIcon />}
                     onClick={() => {
-                        addProduct(props.item);
-                        toast.success("Товар додано в корзину!", {
-                            position: "top-right",
-                            autoClose: 3000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                        });
+                        addToCart(props.item)
                     }}>
                     Додати в корзину
                 </Button>

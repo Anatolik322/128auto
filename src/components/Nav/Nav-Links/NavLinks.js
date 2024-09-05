@@ -6,7 +6,7 @@ const NavLinks = () => {
     const { data } = useFetchItems('/items/categories');
     console.log('data', data)
     return (
-        <nav className="nav__bottom__container">
+        <nav className="nav__bottom__container !fixed w-full top-[55px]">
             <div className="bottom__container">
                 <ul className="nav">
                     {data && data.map((item, id) => {
