@@ -4,6 +4,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import usePostItem from "../../hooks/PostItem";
 import useCartStore from "../../zustand/store";
+import ReactLoading from "react-loading";
+import { useNavigate } from "react-router-dom";
 
 const OrderForm = () => {
   const [lastName, setLastName] = useState("");
@@ -15,6 +17,8 @@ const OrderForm = () => {
   const [branchNumber, setBranchNumber] = useState("");
   const { data, isLoading, isError, postData } = usePostItem("/email_order");
   const cart = useCartStore((state) => state.cart);
+  const clearCart = useCartStore((state) => state.clearCart);
+  const navigate = useNavigate();
 
   const validateEmail = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -50,6 +54,15 @@ const OrderForm = () => {
 
     try {
       await postData(orderData);
+      setAddress("");
+      setBranchNumber("");
+      setEmail("");
+      setFirstName("");
+      setLastName("");
+      setMiddleName("");
+      setPhone("");
+      clearCart();
+      navigate("/thanks");
       toast.success("Замовлення успішно оформлено!");
     } catch (error) {
       toast.error("Сталася помилка під час оформлення замовлення.");
@@ -57,7 +70,18 @@ const OrderForm = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto my-5 p-4 bg-white shadow-md rounded-lg">
+    <div className="max-w-lg mx-auto my-5 p-4 bg-white shadow-md rounded-lg relative">
+      {isLoading ? (
+        <div className="w-full h-full absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <ReactLoading
+            type="cylon"
+            color="#f2f2f2"
+            height={100}
+            width={100}
+            className="mx-auto mt-5 w-20"
+          />
+        </div>
+      ) : null}
       <h2 className="text-xl font-bold mb-4">Оформлення замовлення</h2>
       <form
         onSubmit={handleSubmit}
@@ -135,13 +159,14 @@ const OrderForm = () => {
         <div className="sm:col-span-2">
           <button
             type="submit"
+            disabled={isLoading}
             className="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50"
           >
             Оформити замовлення
           </button>
         </div>
       </form>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </div>
   );
 };
