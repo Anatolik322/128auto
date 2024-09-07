@@ -11,7 +11,7 @@ const CategoryView = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className=" min-vh-100 w-100 justify-content-center align-items-center m-auto pt-[120px]">
+    <div className=" min-vh-100 w-100 justify-content-center align-items-center m-auto pt-[80px]">
       {isLoading || !data ? (
         <ReactLoading
           type="cylon"
@@ -22,7 +22,7 @@ const CategoryView = () => {
         />
       ) : (
         <div>
-          <div className="featured__products__headerd flex !flex-col justify-center items-center !my-10">
+          <div className="featured__products__headerd flex !flex-col justify-center items-center !mb-10 !mt-6">
             <h3 className="featured__items__header__big py-3 text-[#fff]">
               {data && data[0] && data[0].categoryUkr}
             </h3>

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import useFetchItems from "../../hooks/FetchItemsHook";
 import noImage from "../../asset/1122.jpg";
 import { Button } from "@mui/material";
@@ -69,7 +69,12 @@ const ProductPage = () => {
             <h1 className="text-3xl font-bold mb-4 text-white">
               {product.name}
             </h1>
-            <p className="text-xl text-gray-200 mb-4">{product.description}</p>
+            <div
+              className="text-xl text-gray-200 mb-4"
+              dangerouslySetInnerHTML={{
+                __html: product.description,
+              }}
+            ></div>
             <p className="text-2xl text-orange-500 font-bold mb-6">
               {product.price} грн
             </p>

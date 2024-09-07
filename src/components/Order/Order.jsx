@@ -70,7 +70,7 @@ const OrderForm = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto my-5 p-4 bg-white shadow-md rounded-lg relative">
+    <div className="max-w-lg mx-auto mb-5 p-4 bg-white shadow-md rounded-lg relative !mt-[120px]">
       {isLoading ? (
         <div className="w-full h-full absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <ReactLoading

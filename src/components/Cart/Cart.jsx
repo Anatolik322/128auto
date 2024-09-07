@@ -2,6 +2,7 @@ import React from "react";
 import useCartStore from "../../zustand/store";
 import CartCard from "../Card/Cart/CartCard/CartCard";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 function Cart() {
   const cart = useCartStore((state) => state.cart);
 
@@ -19,7 +20,7 @@ function Cart() {
   };
 
   return (
-    <div className="sm:hd-[100vh] h-fit">
+    <div className="sm:hd-[100vh] h-fit mt-[120px]">
       {cart?.length > 0 && (
         <div className="bg-white p-4 rounded-lg shadow-md mt-[100px] w-[80%] mx-auto">
           <div className="flex justify-between items-center mb-4">
@@ -32,6 +33,9 @@ function Cart() {
             <button className="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
               Оформити замовлення
             </button>
+            <span className="text-sm italic mt-3">
+              *Оплата тільки у відділенні Нової Пошти
+            </span>
           </Link>
         </div>
       )}
@@ -42,8 +46,22 @@ function Cart() {
           })}
         </div>
       ) : (
-        <div className="h-[100vh] text-white flex justify-center pt-14 text-4xl">
+        <div className="h-[100vh] text-white flex items-center gap-3 pt-14 text-4xl mt-10 flex-col">
           Корзина порожня!
+          <Link to="/">
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{
+                backgroundColor: "#f28a0a",
+                "&:hover": {
+                  backgroundColor: "rgba(242, 138, 10, 0.7)",
+                },
+              }}
+            >
+              На головну
+            </Button>
+          </Link>
         </div>
       )}
     </div>
