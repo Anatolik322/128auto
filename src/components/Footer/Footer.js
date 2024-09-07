@@ -15,42 +15,40 @@ const Footer = () => {
                 <div className="footer__items__container">
                     <div className="footer__help__container">
                         <div className="footer__help__header">
-                            <h1>Help</h1>
+                            <h1>Допомога</h1>
                         </div>
                         <ul className="fotter__help__links">
                             <li className="help__link">
-                                <a href="/"> Shipping</a>
+                                <a href="/"> Доставка та оплата</a>
                             </li>
                             <li className="help__link">
-                                <a href="/">Refund</a>
+                                <a href="/">Інформація про нас</a>
                             </li>
                             <li className="help__link">
-                                <a href="/">FAQ</a>
+                                <a href="/">Часті запитання</a>
                             </li>
-                            <li className="help__link">
-                                <a href="/">Accessiblity</a>
-                            </li>
+
                         </ul>
                     </div>
                     <div className="footer__contact__container">
                         <div className="footer__contact__header">
-                            <h1>Contact Us</h1>
+                            <h1>Контакти</h1>
                         </div>
                         <ul className="footer__contacts">
                             <li className="footer__contact">
                                 <LocalPhoneIcon /> <span>+123 4567 890</span>
                             </li>
-                            <li className="footer__contact">
-                                <EmailIcon /> <span>shop@shema.com</span>
+                            <li className="footer__contact flex flex-row gap-2">
+                                <EmailIcon /> <span>128packworks@gmail.com</span>
                             </li>
                             <li className="footer__contact">
-                                <LocationOnIcon /> <span>Addis Ababa, Ethiopia</span>
+                                <LocationOnIcon /> <span>Львів, Україна</span>
                             </li>
                         </ul>
                     </div>
-                    <div className="footer__social__link__container">
-                        <div className="footer__social__link__header">
-                            <h1>Stay Connected</h1>
+                    <div className="footer__contact__container">
+                        <div className="footer__contact__header">
+                            <h1>Соцмережі</h1>
                         </div>
                         <ul className="footer__social__links">
                             <li className="social__link">

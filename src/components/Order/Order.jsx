@@ -82,7 +82,9 @@ const OrderForm = () => {
           />
         </div>
       ) : null}
-      <h2 className="text-xl font-bold mb-4">Оформлення замовлення</h2>
+      <h2 className="text-xl font-bold mb-4 text-black">
+        Оформлення замовлення
+      </h2>
       <form
         onSubmit={handleSubmit}
         className="grid grid-cols-1 sm:grid-cols-2 gap-4"

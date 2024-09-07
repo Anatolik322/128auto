@@ -46,6 +46,7 @@
     list-style-type: none;
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 .footer__contact__container {
@@ -99,6 +100,8 @@
     height: 40%;
     width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer__social__link__header h1 {
@@ -115,6 +118,7 @@
     list-style-type: none;
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .social__link {
