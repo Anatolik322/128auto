@@ -1,17 +1,43 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import useFetchItems from "../../hooks/FetchItemsHook";
-import noImage from "../../asset/1122.jpg";
 import { Button } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import useCartStore from "../../zustand/store";
 import { toast, ToastContainer } from "react-toastify";
 import ReactLoading from "react-loading";
-
+import Carousel from "react-bootstrap/Carousel";
+import "./index.css";
+import noImage from "./noImg.jpg";
 const ProductPage = () => {
   const { id } = useParams();
 
   const addProduct = useCartStore((state) => state.addProduct);
+
+  function checkIfImageExists(url, callback) {
+    const img = new Image();
+    console.log(img.complete);
+
+    if (img.complete) {
+      callback(true);
+    } else {
+      img.onload = () => {
+        callback(true);
+      };
+
+      img.onerror = () => {
+        callback(false);
+      };
+    }
+  }
+
+  checkIfImageExists("http://website/images/img.png", (exists) => {
+    if (exists) {
+      return true;
+    } else {
+      return false;
+    }
+  });
 
   const addToCart = (item) => {
     toast.success("Товар додано в корзину!", {
@@ -27,9 +53,11 @@ const ProductPage = () => {
   };
 
   const { data: product, isLoading } = useFetchItems(`/items/${id}`);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   if (isLoading) {
     return (
       <div className="h-[850px]">
@@ -58,11 +86,24 @@ const ProductPage = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="product-image flex justify-center">
-            <img
-              src={product.images[0] || noImage}
-              alt={product.name}
-              className="w-full h-auto rounded-lg"
-            />
+            <Carousel slide={false}>
+              {product.images.map((image, index) => {
+                return (
+                  <Carousel.Item key={index}>
+                    <img
+                      className="d-block w-100"
+                      src={image}
+                      alt={`Фото ${index + 1}`}
+                      style={{
+                        maxHeight: "500px",
+                        objectFit: "cover",
+                        transform: "none",
+                      }}
+                    />
+                  </Carousel.Item>
+                );
+              })}
+            </Carousel>
           </div>
 
           <div className="product-details">

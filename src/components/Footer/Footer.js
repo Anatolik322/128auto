@@ -71,7 +71,7 @@ const Footer = () => {
                 </div>
                 <div className="fotter__copyright__container">
                     <ul className='nav'>
-                        <li className="footer__copyright">©2022 Shema Ltd. |</li>
+                        <li className="footer__copyright">©2018 128auto Ltd. |</li>
                         <li className="footer__terms__condition"> | Terms & Condition |</li>
                         <li className="footer__privacy__policy">| Privacy Policy</li>
                     </ul>

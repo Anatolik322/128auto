@@ -10,9 +10,11 @@ function Cart() {
     let sum = 0;
     if (cart) {
       cart?.map((item) => {
-        console.log("eeeeeeeeeee", item);
-
-        sum += item.price * item.quantity;
+        if (item.discountedPrice) {
+          sum += item.discountedPrice * item.quantity;
+        } else {
+          sum += item.price * item.quantity;
+        }
       });
       return sum;
     }

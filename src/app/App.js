@@ -2,8 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CartItemsProvider from '../Context/CartItemsProvider';
-import WishItemsProvider from '../Context/WishItemsProvider';
+
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ProductPage from '../components/ProductPage/ProductPage';
@@ -18,25 +17,24 @@ const ThankYou = lazy(() => import('../components/Thanks/Thanks'));
 
 function App() {
   return (
-    <CartItemsProvider>
+    <div>
       <ToastContainer />
-      <WishItemsProvider>
-        <Router>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Header />
-            <Routes>
-              <Route index element={<Home />} />
-              <Route path="/category/:id" element={<CategoryView />} />
-              <Route path="/item/:id" element={<ProductPage />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/order" element={<OrderForm />} />
-              <Route path="/thanks" element={<ThankYou />} />
-            </Routes>
-            <Footer />
-          </Suspense>
-        </Router>
-      </WishItemsProvider>
-    </CartItemsProvider>
+
+      <Router>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Header />
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/category/:id" element={<CategoryView />} />
+            <Route path="/item/:id" element={<ProductPage />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/order" element={<OrderForm />} />
+            <Route path="/thanks" element={<ThankYou />} />
+          </Routes>
+          <Footer />
+        </Suspense>
+      </Router>
+    </div>
   );
 }
 

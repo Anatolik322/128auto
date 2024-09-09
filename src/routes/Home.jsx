@@ -6,7 +6,7 @@ import { TabTitle } from "../utils/General";
 import useFetchItems from "../hooks/FetchItemsHook";
 
 const Home = () => {
-  TabTitle("Home - Shema");
+  TabTitle("128auto");
   const { data } = useFetchItems("/homeitems");
 
   return (

@@ -35,7 +35,6 @@ const ItemCard = (props) => {
                 <CardMedia
                     component="img"
                     height="200"
-                    // image={Image}
                     image={props.item.images[0]}
                     alt={props.item.name}
                 />
@@ -49,11 +48,26 @@ const ItemCard = (props) => {
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         {props.item.description.length > 100
-                            ? props.item.description.slice(0, 100) + '...'
+                            ? <div
+                                className=""
+                                dangerouslySetInnerHTML={{
+                                    __html: props.item.description.slice(0, 100) + '...',
+                                }}
+                            ></div>
                             : props.item.description}
                     </Typography>
                     <Typography variant="h6" color="text.primary" mt={2}>
-                        {props.item.price} грн.
+                        <div className="mt-1 text-xl text-black">
+                            {props.item.discountedPrice ? (
+                                <div className='flex flex-row gap-1 items-center'>
+                                    <h6 className="line-through text-gray-400 text-xl w-fit">{props.item.price} грн</h6>
+                                    <h4 className="ml-2.5 text-orange-600">{props.item.discountedPrice} грн</h4>
+                                </div>
+                            ) : (
+                                <h4>{`${props.item.price} грн`}</h4>
+                            )}
+                        </div>
+                        {/* {props.item.price} грн. */}
                     </Typography>
                 </CardContent>
             </Link>
