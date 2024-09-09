@@ -26,6 +26,7 @@ const ItemCard = (props) => {
 
         addProduct(product);
     };
+    console.log(props);
 
     return (
         <Card sx={{ maxWidth: 345, margin: '0 auto', borderRadius: 2, boxShadow: 3 }}>
@@ -34,7 +35,8 @@ const ItemCard = (props) => {
                 <CardMedia
                     component="img"
                     height="200"
-                    image={Image}
+                    // image={Image}
+                    image={props.item.images[0]}
                     alt={props.item.name}
                 />
             </Link>
@@ -66,7 +68,6 @@ const ItemCard = (props) => {
                 </Button>
                 <svg
                     fill={
-                        // true
                         checkItemInCart(props.item._id)
                             ? "#f28a0a" : "#000"}
                     version="1.1"

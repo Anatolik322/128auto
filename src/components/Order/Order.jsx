@@ -16,6 +16,9 @@ const OrderForm = () => {
   const [address, setAddress] = useState("");
   const [branchNumber, setBranchNumber] = useState("");
   const { data, isLoading, isError, postData } = usePostItem("/email_order");
+  const { isLoading: isLoadData, postData: userPostData } = usePostItem(
+    "/send_thank_you_email"
+  );
   const cart = useCartStore((state) => state.cart);
   const clearCart = useCartStore((state) => state.clearCart);
   const navigate = useNavigate();
@@ -52,8 +55,20 @@ const OrderForm = () => {
       cart,
     };
 
+    const userOrderDetails = {
+      firstName: firstName,
+      lastName: lastName,
+      middleName: middleName,
+      email: email,
+      phone: phone,
+      address: address,
+      branchNumber: branchNumber,
+      cart: cart,
+    };
+
     try {
       await postData(orderData);
+      await userPostData(userOrderDetails);
       setAddress("");
       setBranchNumber("");
       setEmail("");
@@ -71,7 +86,7 @@ const OrderForm = () => {
 
   return (
     <div className="max-w-lg mx-auto mb-5 p-4 bg-white shadow-md rounded-lg relative !mt-[120px]">
-      {isLoading ? (
+      {isLoading || isLoadData ? (
         <div className="w-full h-full absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <ReactLoading
             type="cylon"
