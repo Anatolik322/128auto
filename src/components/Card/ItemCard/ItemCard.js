@@ -71,7 +71,7 @@ const ItemCard = (props) => {
                     </Typography>
                 </CardContent>
             </Link>
-            <CardActions className=' !justify-between !px-5'>
+            <CardActions className=' !justify-between !px-5 '>
                 <Button variant="contained" color="primary" sx={{
                     backgroundColor: '#f28a0a', '&:hover': {
                         backgroundColor: 'rgba(242, 138, 10, 0.7)',
