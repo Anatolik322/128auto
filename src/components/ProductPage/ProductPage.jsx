@@ -121,7 +121,18 @@ const ProductPage = () => {
               }}
             ></div>
             <p className="text-2xl text-orange-500 font-bold mb-6">
-              {product.price} грн
+              {product.discountedPrice ? (
+                <div className="flex flex-row gap-1 items-center">
+                  <h3 className="line-through text-gray-400 text-xl w-fit">
+                    {product.price} грн
+                  </h3>
+                  <h3 className="ml-2.5 text-orange-600">
+                    {product.discountedPrice} грн
+                  </h3>
+                </div>
+              ) : (
+                <h2 className="text-black">{`${product.price} грн`}</h2>
+              )}
             </p>
             <Button
               variant="contained"
