@@ -13,9 +13,9 @@ const Categories = () => {
                     <div className="featured__categories__header__line"></div>
                 </div>
                 <div className="featured__categories__card__container">
-                    <CategoryCard key={'32323gregre2'} data={{ name: 'Пилососи', img: 'https://content.rozetka.com.ua/goods/images/big_tile/436353949.jpg', url: '/category/car_vacuums' }} />
-                    <CategoryCard key={'32323gre2'} data={{ name: 'Хімія для догляду', img: 'https://images.prom.ua/5562900428_w1280_h640_aromatizator-dlya-salona.jpg', url: '/category/care_chemicals' }} />
-                    <CategoryCard key={'323greg232'} data={{ name: 'Обладнання', img: 'https://img.ktc.ua/img/base/1/5/442765.jpg', url: '/category/vacuum_attachments' }} />
+                    <CategoryCard key={'32323gregre2'} data={{ name: 'Автопилососи', img: 'https://storage.npshopping.com/images/posts/669fbc58c92ab165176668.webp', url: '/category/vacuum' }} />
+                    <CategoryCard key={'32323gre2'} data={{ name: 'Хімія для догляду', img: 'https://opt.lido.ua/uploads/cache/CatalogItems/CatalogItems8765/ed75368694-5_resize_1200x1200.jpeg', url: '/category/chemistry' }} />
+                    <CategoryCard key={'323greg232'} data={{ name: 'Компресори', img: 'https://detto-palardo.com/wp-content/uploads/2024/02/img_0038-jpeg.webp', url: '/category/compressors' }} />
                 </div>
             </div>
         </div>

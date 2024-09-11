@@ -56,7 +56,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [product]);
 
   if (isLoading) {
     return (
@@ -85,7 +85,7 @@ const ProductPage = () => {
         />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="product-image flex justify-center">
+          <div className="product-image flex justify-center sm:max-h-[550px] max-h-[590px]">
             <Carousel slide={false}>
               {product.images.map((image, index) => {
                 return (
@@ -131,7 +131,7 @@ const ProductPage = () => {
                   </h3>
                 </div>
               ) : (
-                <h2 className="text-black">{`${product.price} грн`}</h2>
+                <h2 className=" text-gray-200">{`${product.price} грн`}</h2>
               )}
             </p>
             <Button

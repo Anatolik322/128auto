@@ -13,7 +13,7 @@ const CategoryView = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [data]);
   return (
     <div className=" min-vh-100 w-100 justify-content-center align-items-center m-auto pt-[80px]">
       {isLoading || !data ? (
