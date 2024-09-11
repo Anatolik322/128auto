@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
 import './CategoryCard.css'
 import { Button } from '@mui/material';
-import imageUrl from '../../../asset/aromat.jpg'
+
 const CategoryCard = (props) => {
-    console.log(props);
 
     return (
         <div className="category__card__card">

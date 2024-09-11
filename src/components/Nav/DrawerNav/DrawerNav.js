@@ -12,7 +12,8 @@ import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import Form from '../Search-Bar/Form';
 import { Link } from 'react-router-dom';
 import useFetchItems from '../../../hooks/FetchItemsHook'
-
+import ReactLoading from "react-loading";
+import logo from "../../Nav/Nav-Brand/logo.png"
 
 const DrawerNav = () => {
   const [state, setState] = useState({
@@ -29,7 +30,6 @@ const DrawerNav = () => {
 
   const { data, isLoading } = useFetchItems('/items/categories')
 
-  isLoading ? console.log('loading...') : console.log('dataNaw', data);
   const list = (anchor) => (
     <Box
       sx={{ width: 250 }}
@@ -37,22 +37,37 @@ const DrawerNav = () => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        {data?.map((item, id) => (
-          <ListItem key={id} disablePadding>
-            <ListItemButton>
-              <ListItemText>
-                <Link to={`/category/${item.category}`}>{item.categoryUkr}</Link>
-              </ListItemText>
-            </ListItemButton>
+      <div className=' flex flex-row justify-between items-center pl-3 pt-2'>
+        <img src={logo} className=' h-[40px] ' alt='128auto'></img>
+
+        <List>
+          <ListItem disablePadding>
+            <Control />
           </ListItem>
-        ))}
-      </List>
+        </List>
+      </div>
       <List>
-        <ListItem disablePadding>
-          <Control />
-        </ListItem>
+        {
+          isLoading ?
+            <ReactLoading
+              type="cylon"
+              color="#f28a0a"
+              height={100}
+              width={100}
+              className="m-auto mt-[250px]"
+            />
+            :
+            data?.map((item, id) => (
+              <ListItem key={id} disablePadding>
+                <ListItemButton>
+                  <ListItemText>
+                    <Link to={`/category/${item.category}`}>{item.categoryUkr}</Link>
+                  </ListItemText>
+                </ListItemButton>
+              </ListItem>
+            ))}
       </List>
+
       <List>
         <ListItem>
           <div className="search__drawer">
