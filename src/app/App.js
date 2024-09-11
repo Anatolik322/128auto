@@ -14,6 +14,9 @@ const CategoryView = lazy(() => import('../routes/CategoryView'));
 const Cart = lazy(() => import('../components/Cart/Cart'));
 const OrderForm = lazy(() => import('../components/Order/Order'));
 const ThankYou = lazy(() => import('../components/Thanks/Thanks'));
+const Delivery = lazy(() => import("../components/Delivery/Delivery"));
+const AboutUs = lazy(() => import("../components/AboutUs/AboutUs"));
+const Faq = lazy(() => import("../components/FAQ/Faq"));
 
 function App() {
   return (
@@ -30,6 +33,9 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/order" element={<OrderForm />} />
             <Route path="/thanks" element={<ThankYou />} />
+            <Route path="/delivery" element={<Delivery />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/qestions" element={<Faq />} />
           </Routes>
           <Footer />
         </Suspense>

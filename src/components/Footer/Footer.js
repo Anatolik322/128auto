@@ -19,13 +19,13 @@ const Footer = () => {
                         </div>
                         <ul className="fotter__help__links">
                             <li className="help__link">
-                                <a href="/"> Доставка та оплата</a>
+                                <a href="/delivery"> Доставка та оплата</a>
                             </li>
                             <li className="help__link">
-                                <a href="/">Інформація про нас</a>
+                                <a href="/about">Інформація про нас</a>
                             </li>
                             <li className="help__link">
-                                <a href="/">Часті запитання</a>
+                                <a href="/qestions">Часті запитання</a>
                             </li>
 
                         </ul>
@@ -36,7 +36,7 @@ const Footer = () => {
                         </div>
                         <ul className="footer__contacts">
                             <li className="footer__contact">
-                                <LocalPhoneIcon /> <span>+123 4567 890</span>
+                                <LocalPhoneIcon /> <span>+380 980 898 033</span>
                             </li>
                             <li className="footer__contact flex flex-row gap-2">
                                 <EmailIcon /> <span>128packworks@gmail.com</span>
@@ -55,7 +55,7 @@ const Footer = () => {
                                 <TwitterIcon />
                             </li>
                             <li className="social__link">
-                                <InstagramIcon />
+                                <a href='https://www.instagram.com/128_auto?igsh=OWFhZGtzcWo2cm8w' target='blank'><InstagramIcon /></a>
                             </li>
                             <li className="social__link">
                                 <YouTubeIcon />
@@ -69,7 +69,7 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="fotter__copyright__container">
+                <div className="fotter__copyright__container mt-4">
                     <ul className='nav'>
                         <li className="footer__copyright">©2018 128auto Ltd. |</li>
                         <li className="footer__terms__condition"> | Terms & Condition |</li>
