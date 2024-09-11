@@ -3,7 +3,7 @@ import './ItemCard.css'
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
 import useCartStore from "../../../zustand/store";
 import { toast, ToastContainer } from "react-toastify";
-import Image from "../../../asset/1122.jpg"
+import load from "../../../asset/load.gif"
 import { Link } from 'react-router-dom';
 
 const ItemCard = (props) => {
@@ -33,13 +33,16 @@ const ItemCard = (props) => {
             <Link to={`/item/${props.item._id}`}>
                 <CardMedia
                     component="img"
-                    height="200"
+                    height="345"
+                    width="345"
                     sx={{
                         minHeight: '345px',
                         maxHeight: '346px'
                     }}
                     image={props.item.images[0]}
                     alt={props.item.name}
+                    title='Фото автотовару'
+                    loading={load}
                 />
             </Link>
             <Link to={`/item/${props.item._id}`}>
@@ -59,15 +62,15 @@ const ItemCard = (props) => {
                             ></div>
                             : props.item.description}
                     </Typography>
-                    <Typography variant="h6" color="text.primary" mt={2}>
-                        <div className="mt-1 text-xl text-black">
+                    <Typography variant="div" color="text.primary" sx={{ marginTop: '10px' }}>
+                        <div className="mt-2 text-xl text-black">
                             {props.item.discountedPrice ? (
                                 <div className='flex flex-row gap-1 items-center'>
-                                    <h6 className="line-through text-gray-400 text-xl w-fit">{props.item.price} грн</h6>
-                                    <h4 className="ml-2.5 text-orange-600">{props.item.discountedPrice} грн</h4>
+                                    <h4 className="line-through text-gray-400 text-xl w-fit">{props.item.price} грн</h4>
+                                    <h3 className="ml-2.5 text-orange-600">{props.item.discountedPrice} грн</h3>
                                 </div>
                             ) : (
-                                <h4>{`${props.item.price} грн`}</h4>
+                                <h3>{`${props.item.price} грн`}</h3>
                             )}
                         </div>
                     </Typography>

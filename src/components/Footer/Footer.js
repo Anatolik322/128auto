@@ -15,7 +15,7 @@ const Footer = () => {
                 <div className="footer__items__container">
                     <div className="footer__help__container">
                         <div className="footer__help__header">
-                            <h1>Допомога</h1>
+                            <span>Допомога</span>
                         </div>
                         <ul className="fotter__help__links">
                             <li className="help__link">
@@ -32,7 +32,7 @@ const Footer = () => {
                     </div>
                     <div className="footer__contact__container">
                         <div className="footer__contact__header">
-                            <h1>Контакти</h1>
+                            <span>Контакти</span>
                         </div>
                         <ul className="footer__contacts">
                             <li className="footer__contact">
@@ -48,7 +48,7 @@ const Footer = () => {
                     </div>
                     <div className="footer__contact__container">
                         <div className="footer__contact__header">
-                            <h1>Соцмережі</h1>
+                            <span>Соцмережі</span>
                         </div>
                         <ul className="footer__social__links">
                             <li className="social__link">

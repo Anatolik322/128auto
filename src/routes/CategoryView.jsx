@@ -4,9 +4,13 @@ import useFetchItems from "../hooks/FetchItemsHook";
 import ItemCard from "../components/Card/ItemCard/ItemCard";
 import "../components/Featured/Items/FeaturedItems.css";
 import { useEffect } from "react";
+import { TabTitle } from "../utils/General";
+
 const CategoryView = () => {
   const param = useParams();
   const { data, isLoading } = useFetchItems(`/category/${param.id}`);
+  TabTitle(`128auto - ${data && data[0] && data[0].categoryUkr}`);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -23,13 +27,12 @@ const CategoryView = () => {
       ) : (
         <div>
           <div className="featured__products__headerd flex !flex-col justify-center items-center !mb-10 !mt-6">
-            <h3 className="featured__items__header__big py-3 text-[#fff]">
+            <h2 className="featured__items__header__big py-3 text-[#fff]">
               {data && data[0] && data[0].categoryUkr}
-            </h3>
+            </h2>
             <div className="featured__products__header__line"></div>
           </div>
           <div className="flex flex-row gap-10 flex-wrap pb-10 justify-center">
-            {/* <FeaturedItems items={data} /> */}
             {data &&
               data?.map((item, id) => {
                 return (
