@@ -39,10 +39,10 @@ const OrderForm = () => {
       return;
     }
 
-    if (!validatePhone(phone)) {
-      toast.error("Будь ласка, введіть коректний номер телефону.");
-      return;
-    }
+    // if (!validatePhone(phone)) {
+    //   toast.error("Будь ласка, введіть коректний номер телефону.");
+    //   return;
+    // }
 
     const orderData = {
       lastName,

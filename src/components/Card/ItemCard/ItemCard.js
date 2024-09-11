@@ -29,12 +29,15 @@ const ItemCard = (props) => {
     console.log(props);
 
     return (
-        <Card sx={{ maxWidth: 345, margin: '0 auto', borderRadius: 2, boxShadow: 3 }}>
-            {/* <ToastContainer /> */}
+        <Card sx={{ maxWidth: 345, margin: '0 auto', borderRadius: 2, boxShadow: 3, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '640px' }}>
             <Link to={`/item/${props.item._id}`}>
                 <CardMedia
                     component="img"
                     height="200"
+                    sx={{
+                        minHeight: '345px',
+                        maxHeight: '346px'
+                    }}
                     image={props.item.images[0]}
                     alt={props.item.name}
                 />
@@ -67,7 +70,6 @@ const ItemCard = (props) => {
                                 <h4>{`${props.item.price} грн`}</h4>
                             )}
                         </div>
-                        {/* {props.item.price} грн. */}
                     </Typography>
                 </CardContent>
             </Link>
