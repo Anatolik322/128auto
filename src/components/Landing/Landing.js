@@ -25,10 +25,10 @@ const Landing = () => {
         <div className="landing__container">
             <div className="landing__header__container w-[92%]">
                 <div className="landing__header pt-5">
-                    <h3 className="landing__header__discount font-bold">До 15% знижки</h3>
-                    <h1 className="landing__header__main !text-[40px] !sm:text-[72px]">
+                    <h2 className="landing__header__discount font-bold">До 15% знижки</h2>
+                    <h2 className="landing__header__main !text-[40px] !sm:text-[72px]">
                         Прокачайте свій автомобіль разом з нами!
-                    </h1>
+                    </h2>
                     <Link to="/category/car_vacuums">
                         <Button
                             variant="outlined"
@@ -62,6 +62,10 @@ const Landing = () => {
                     className="landing__image transition-opacity duration-1000 ease-in-out !h-[400px] "
                     src={images[currentImage]}
                     alt="car vacuum"
+                    title="автотовар"
+                    height="500"
+                    width="500"
+                    loading="eager"
                 />
             </div>
         </div>

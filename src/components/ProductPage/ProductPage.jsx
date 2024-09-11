@@ -99,6 +99,10 @@ const ProductPage = () => {
                         objectFit: "cover",
                         transform: "none",
                       }}
+                      title="фото автотовару"
+                      height="500"
+                      width="500"
+                      loading="eager"
                     />
                   </Carousel.Item>
                 );
@@ -107,9 +111,9 @@ const ProductPage = () => {
           </div>
 
           <div className="product-details">
-            <h1 className="text-3xl font-bold mb-4 text-white">
+            <h2 className="text-3xl font-bold mb-4 text-white">
               {product.name}
-            </h1>
+            </h2>
             <div
               className="text-xl text-gray-200 mb-4"
               dangerouslySetInnerHTML={{

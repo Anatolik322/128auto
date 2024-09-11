@@ -9,7 +9,7 @@ const FeaturedItems = (props) => {
         <div className="featured__products__container">
             <div className="featured__products">
                 <div className="featured__categories__header">
-                    <h1 className='featured__header__big'>{props.title ? props.title : props?.items && props?.items[0]?.categoryUkr}</h1>
+                    <h2 className='featured__header__big'>{props.title ? props.title : props?.items && props?.items[0]?.categoryUkr}</h2>
                     <div className="featured__categories__header__line"></div>
                 </div>
                 <div className='d-flex min-vh-100 w-100 justify-content-center align-items-center m-auto'>

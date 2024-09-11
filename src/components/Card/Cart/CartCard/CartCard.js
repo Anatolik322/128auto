@@ -36,9 +36,13 @@ const CartCard = (props) => {
                     src={props.product.images[0]}
                     alt={props.product.name}
                     className="w-20 h-20 mr-3.5 object-cover rounded-lg"
+                    title='автотовар в корзині'
+                    height="80"
+                    width="80"
+                    loading='eager'
                 />
                 <div className='h-fit'>
-                    <h3 className="mb-1 text-lg font-bold text-black">{props.product.name}</h3>
+                    <h2 className="mb-1 text-lg font-bold text-black">{props.product.name}</h2>
                     <p className="m-0 text-sm text-gray-600">Бренд: {props.product.brand}</p>
                     <p className="mt-1 text-sm text-orange-600">
                         {props.product.discountedPrice ? (

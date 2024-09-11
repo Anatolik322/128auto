@@ -38,7 +38,13 @@ const DrawerNav = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <div className=' flex flex-row justify-between items-center pl-3 pt-2'>
-        <img src={logo} className=' h-[40px] ' alt='128auto'></img>
+        <img src={logo}
+          className='h-[40px]'
+          alt='128auto'
+          width='125'
+          height='40'
+          title='128auto автотовари магазин'
+          loading='eager' />
 
         <List>
           <ListItem disablePadding>

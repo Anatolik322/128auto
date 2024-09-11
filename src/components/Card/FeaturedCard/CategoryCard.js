@@ -6,7 +6,11 @@ const CategoryCard = (props) => {
 
     return (
         <div className="category__card__card">
-            <img src={props.data.img} alt="" className="product__img " />
+            <img src={props.data.img} alt="фото категорії автотовару" className="product__img "
+                title="фото катогорії автотовару"
+                height="480"
+                width="320"
+                loading="eager" />
             <div className="category__card__detail">
                 <div className="category__name">
                     <span className=' text-[#fff]'>{props.data.name}</span>

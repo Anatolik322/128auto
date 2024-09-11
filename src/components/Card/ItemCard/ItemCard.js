@@ -42,7 +42,7 @@ const ItemCard = (props) => {
                     image={props.item.images[0]}
                     alt={props.item.name}
                     title='Фото автотовару'
-                    loading={load}
+                    loading="eager"
                 />
             </Link>
             <Link to={`/item/${props.item._id}`}>
@@ -66,11 +66,11 @@ const ItemCard = (props) => {
                         <div className="mt-2 text-xl text-black">
                             {props.item.discountedPrice ? (
                                 <div className='flex flex-row gap-1 items-center'>
-                                    <h4 className="line-through text-gray-400 text-xl w-fit">{props.item.price} грн</h4>
+                                    <h3 className="line-through text-gray-400 text-xl w-fit">{props.item.price} грн</h3>
                                     <h3 className="ml-2.5 text-orange-600">{props.item.discountedPrice} грн</h3>
                                 </div>
                             ) : (
-                                <h3>{`${props.item.price} грн`}</h3>
+                                <h2 className='text-black'>{`${props.item.price} грн`}</h2>
                             )}
                         </div>
                     </Typography>
