@@ -25,11 +25,11 @@ const Landing = () => {
         <div className="landing__container">
             <div className="landing__header__container w-[92%]">
                 <div className="landing__header pt-5">
-                    <h2 className="landing__header__discount font-bold">До 15% знижки</h2>
-                    <h2 className="landing__header__main !text-[40px] !sm:text-[72px]">
-                        Прокачайте свій автомобіль разом з нами!
-                    </h2>
-                    <Link to="/category/car_vacuums">
+                    <span className="landing__header__discount font-bold text-white">До 15% знижки</span>
+                    <h1 className="landing__header__main !text-[40px] !sm:text-[72px]">
+                        Автохімія, поліролі, воски – все для вас в 128auto
+                    </h1>
+                    <Link to="/category/chemistry">
                         <Button
                             variant="outlined"
                             sx={[
