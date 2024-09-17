@@ -1,6 +1,7 @@
 import Control from '../Controls/Control';
 import DrawerNav from '../DrawerNav/DrawerNav';
 import NavBrand from '../Nav-Brand/Navbrand';
+import Form from '../Search-Bar/Form';
 import './Container.css'
 
 const Navtop = () => {
@@ -8,7 +9,10 @@ const Navtop = () => {
         <div className="nav__top__container px-4 fixed z-20 w-full bg-white top-0">
             <div className="top__container flex flex-row items-center justify-between font-serif font-bold">
                 <NavBrand />
-                <h1 className=' text-black !m-0  sm:text-[18px] text-[12px] w-fit sm:block hidden'>Автотовари для кожного</h1>
+                {/* <h1 className=' text-black !m-0  sm:text-[18px] text-[12px] w-fit sm:block hidden'>Автотовари для кожного</h1> */}
+                <div className="search__drawer sm:block hidden">
+                    <Form />
+                </div>
                 <div className="control__bar">
                     <Control />
                 </div>
