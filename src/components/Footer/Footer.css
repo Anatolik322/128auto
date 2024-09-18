@@ -118,7 +118,7 @@
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    padding-left: 45px;
 }
 
 .social__link {

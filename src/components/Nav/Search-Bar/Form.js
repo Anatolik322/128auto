@@ -62,10 +62,10 @@ const Form = () => {
     }
 
     return (
-        <form className="search__form !w-[400px]" >
+        <form className="search__form sm:w-[400px] w-[200px]" >
             <input
                 type="text"
-                placeholder='Пошук по продуктах'
+                placeholder='Пошук '
                 className="search__form__input !border-b-2"
                 value={searchInput}
                 onChange={handleChange}

@@ -76,13 +76,7 @@ const DrawerNav = () => {
             ))}
       </List>
 
-      <List>
-        <ListItem>
-          <div className="search__drawer">
-            <Form />
-          </div>
-        </ListItem>
-      </List>
+
       <Divider />
     </Box>
   );
