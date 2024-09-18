@@ -64,13 +64,15 @@ const DrawerNav = () => {
             />
             :
             data?.map((item, id) => (
-              <ListItem key={id} disablePadding>
-                <ListItemButton>
-                  <ListItemText>
-                    <Link to={`/category/${item.category}`}>{item.categoryUkr}</Link>
-                  </ListItemText>
-                </ListItemButton>
-              </ListItem>
+              <Link to={`/category/${item.category}`} key={id} >
+                <ListItem key={id} disablePadding>
+                  <ListItemButton>
+                    <ListItemText>
+                      {item.categoryUkr}
+                    </ListItemText>
+                  </ListItemButton>
+                </ListItem>
+              </Link>
             ))}
       </List>
 
