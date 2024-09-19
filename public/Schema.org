@@ -1,0 +1,168 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "128 Auto Shop",
+  "url": "https://www.128auto.shop",
+  "logo": "https://www.128auto.shop/images/logo.png",
+  "description": "Магазин аксесуарів для авто 128 Auto Shop пропонує широкий вибір товарів для автомобілів: автохімія, автопилососи компресори, тримачі для телефонів, зарядні пристрої та багато іншого.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+380980898033",
+    "contactType": "Customer Service",
+    "areaServed": "UA",
+    "availableLanguage": ["Ukrainian", "Russian", "English"]
+  },
+  "sameAs": [
+    "https://www.instagram.com/128_auto?igsh=OWFhZGtzcWo2cm8w"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "вул. Прикладна, 123",
+    "addressLocality": "Київ",
+    "addressRegion": "Київська область",
+    "postalCode": "01001",
+    "addressCountry": "UA"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Monday",
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Tuesday",
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Wednesday",
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Thursday",
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ]
+},
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      "name": "ПИЛОСОС АВТОМОБІЛЬНИЙ \"СМЕРЧ-2\", 150ВТ, 4.5КПА, ЧОРНИЙ",
+      "image": [
+        "https://opt.lido.ua/uploads/cache/CatalogItems/CatalogItems4087/9d649df2fc-1_resize_1200x1200.jpeg",
+        "https://opt.lido.ua/uploads/cache/CatalogItems/CatalogItems4087/1ff04b02d5-2_resize_1200x1200.jpeg"
+      ],
+      "description": "Сухе та вологе прибирання, Потужність 150Вт, Об’єм пилозбірника 500мл, Штекер прикурювача, Довжина кабелю 4м.",
+      "sku": "BA57B",
+      "brand": {
+        "@type": "Brand",
+        "name": "Белавто"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "UAH",
+        "price": "1550",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.128auto.shop/product/BA57B"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "ПИЛОСОС АВТОМОБІЛЬНИЙ \"СМЕРЧ\", 150ВТ, 4.5КПА, ЧОРНИЙ",
+      "image": [
+        "https://opt.lido.ua/uploads/cache/CatalogItems/CatalogItems4086/8b6143f701-1_resize_1200x1200.jpeg",
+        "https://opt.lido.ua/uploads/cache/CatalogItems/CatalogItems4086/d03198f420-2_resize_1200x1200.jpeg"
+      ],
+      "description": "Сухе та вологе прибирання, Потужність 150Вт, Об’єм пилозбірника 500мл, Штекер прикурювача, Довжина кабелю 4м.",
+      "sku": "BA56B",
+      "brand": {
+        "@type": "Brand",
+        "name": "Белавто"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "UAH",
+        "price": "1450",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.128auto.shop/product/BA56B"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "ПИЛОСОС АВТОМОБІЛЬНИЙ «ТАЙФУН» ВІД ПРИКУРЮВАЧА З LED ЛІХТАРЕМ BA55B 110 ВТ, 3.2 КПА",
+      "image": [
+        "https://opt.lido.ua/uploads/cache/CatalogItems/CatalogItems4340/0240486622-3_resize_1200x1200.jpeg",
+        "https://opt.lido.ua/uploads/cache/CatalogItems/CatalogItems4340/ee7e291d47-4_resize_1200x1200.jpeg"
+      ],
+      "description": "Сухе та вологе прибирання, Потужність 110Вт, Об’єм пилозбірника 300мл, LED ліхтар, Довжина кабелю 5м.",
+      "sku": "BA55B",
+      "brand": {
+        "@type": "Brand",
+        "name": "Белавто"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "UAH",
+        "price": "699",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.128auto.shop/product/BA55B"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "ПИЛОСОС АВТОМОБІЛЬНИЙ «ТОРНАДО» BA-53B 110 ВТ, 3.5 КПА",
+      "image": [
+        "https://opt.lido.ua/uploads/cache/CatalogItems/CatalogItems2631/7686fb28de-1_resize_1200x1200.jpeg"
+      ],
+      "description": "Сухе та вологе прибирання, Потужність 110Вт, Об’єм пилозбірника 300мл, Довжина кабелю 5м.",
+      "sku": "BA53B",
+      "brand": {
+        "@type": "Brand",
+        "name": "Белавто"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "UAH",
+        "price": "750",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.128auto.shop/product/BA53B"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "ПИЛОСОС АВТОМОБІЛЬНИЙ WINSO ВІД ПРИКУРЮВАЧА 110ВТ, 5,2КПА, ЧОРНИЙ",
+      "image": [
+        "https://opt.lido.ua/uploads/cache/CatalogItems/CatalogItems7233/0da29dcfa3-1_resize_1200x1200.jpeg"
+      ],
+      "description": "Сухе та вологе прибирання, Потужність 110Вт, Об’єм пилозбірника 500мл, Довжина кабелю 3м.",
+      "sku": "250200",
+      "brand": {
+        "@type": "Brand",
+        "name": "Winso"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "UAH",
+        "price": "700",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.128auto.shop/product/250200"
+      }
+    }
+  ]
+}
+</script>
