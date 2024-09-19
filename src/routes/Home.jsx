@@ -6,16 +6,19 @@ import { TabTitle } from "../utils/General";
 import useFetchItems from "../hooks/FetchItemsHook";
 
 const Home = () => {
-  TabTitle("128auto");
-  const { data } = useFetchItems("/homeitems");
+	TabTitle("128auto - Автотовари");
+	const { data } = useFetchItems("/homeitems");
 
-  return (
-    <Fragment>
-      <Landing />
-      <FeaturedCategories />
-      <FeaturedItems items={data} title={"Популярні товари"} />
-    </Fragment>
-  );
+	return (
+		<Fragment>
+			<Landing />
+			<FeaturedCategories />
+			<FeaturedItems
+				items={data}
+				title={"Популярні товари"}
+			/>
+		</Fragment>
+	);
 };
 
 export default Home;
