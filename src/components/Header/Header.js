@@ -4,10 +4,10 @@ import './Header.css'
 
 const Header = () => {
     return (
-        <div className='header__container'>
+        <header className='header__container'>
             <Navtop />
             <Navbottom />
-        </div>
+        </header>
     );
 }
 

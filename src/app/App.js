@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import ReactPixel from 'react-facebook-pixel';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ProductPage from '../components/ProductPage/ProductPage';
@@ -19,6 +19,12 @@ const AboutUs = lazy(() => import("../components/AboutUs/AboutUs"));
 const Faq = lazy(() => import("../components/FAQ/Faq"));
 
 function App() {
+
+  useEffect(() => {
+    ReactPixel.init('ВАШ_FB_PIXEL_ID');
+    ReactPixel.pageView();
+  }, []);
+
   return (
     <div>
       <ToastContainer />

@@ -3,7 +3,7 @@ import './ItemCard.css'
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
 import useCartStore from "../../../zustand/store";
 import { toast, ToastContainer } from "react-toastify";
-import load from "../../../asset/load.gif"
+import ReactPixel from 'react-facebook-pixel';
 import { Link } from 'react-router-dom';
 
 const ItemCard = (props) => {
@@ -82,7 +82,16 @@ const ItemCard = (props) => {
                         backgroundColor: 'rgba(242, 138, 10, 0.7)',
                     },
                 }} startIcon={<AddShoppingCartIcon />}
-                    onClick={() => addToCart(props.item)}>
+                    onClick={() => {
+                        addToCart(props.item);
+                        ReactPixel.track('AddToCart', {
+                            content_name: props?.item.name,
+                            content_id: props.item._id,
+                            content_type: 'product',
+                            value: props.item.price,
+                            currency: 'UAH'
+                        });
+                    }}>
                     Додати в корзину
                 </Button>
                 {/* <svg
