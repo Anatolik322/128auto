@@ -47,7 +47,7 @@ const ItemCard = (props) => {
             </Link>
             <Link to={`/item/${props.item._id}`}>
                 <CardContent>
-                    <Typography gutterBottom variant="h6" component="div">
+                    <Typography gutterBottom variant="h2" component="h2" sx={{ fontSize: '24px', color: '#1B1B1B' }}>
                         {props.item.name.length > 25
                             ? props.item.name.slice(0, 25) + '...'
                             : props.item.name}
@@ -63,14 +63,14 @@ const ItemCard = (props) => {
                             : props.item.description}
                     </Typography>
                     <Typography variant="div" color="text.primary" sx={{ marginTop: '10px' }}>
-                        <div className="mt-2 text-xl text-black">
+                        <div className="mt-2 text-xl text-[#1B1B1B]">
                             {props.item.discountedPrice ? (
                                 <div className='flex flex-row gap-1 items-center'>
                                     <h3 className="line-through text-gray-400 text-xl w-fit">{props.item.price} грн</h3>
                                     <h3 className="ml-2.5 text-orange-600">{props.item.discountedPrice} грн</h3>
                                 </div>
                             ) : (
-                                <h2 className='text-black'>{`${props.item.price} грн`}</h2>
+                                <h3 className='text-[#1B1B1B]'>{`${props.item.price} грн`}</h3>
                             )}
                         </div>
                     </Typography>
