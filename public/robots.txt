@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /cart/
+Disallow: /login/
+Disallow: /register/
+
+Allow: /
+
+Sitemap: https://www.128auto.shop/sitemap.xml
