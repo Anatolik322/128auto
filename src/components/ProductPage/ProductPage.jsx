@@ -207,38 +207,59 @@ const ProductPage = () => {
 							>
 								Додати в корзину
 							</Button>
-							{/* <div className="reviews">
-							<h2 className="text-2xl font-semibold mb-4 text-gray-400 ">
-								Відгуки
-							</h2>
-							{product.reviews?.length ? (
-								<ul className="space-y-4 text-gray-400 ">
-									{product.reviews.map(
-										(review) => (
-											<li
-												key={
-													review.id
-												}
-												className="border-b pb-4"
-											>
-												<p className="text-lg font-semibold">
-													{
-														review.user
+							<div className="reviews mt-5">
+								<h2 className="text-2xl font-semibold mb-4 text-gray-200 ">
+									Відгуки
+								</h2>
+								{product.reviews?.length ? (
+									<ul className="space-y-4 text-gray-200  !pl-2">
+										{product.reviews.map(
+											(review) => (
+												<li
+													key={
+														review._id
 													}
-												</p>
-												<p>
-													{
-														review.comment
-													}
-												</p>
-											</li>
-										)
-									)}
-								</ul>
-							) : (
-								<p>Немає відгуків</p>
-							)}
-						</div> */}
+													className="border-b pb-4"
+												>
+													<p className="text-lg font-semibold">
+														{
+															review.user
+														}
+													</p>
+													<p>
+														{
+															review.comment
+														}
+													</p>
+													<div className="flex items-center">
+														{Array.from(
+															{
+																length: 5,
+															},
+															(
+																_,
+																index
+															) => (
+																<svg
+																	key={
+																		index
+																	}
+																	className={`w-5 h-5 ${index < review.rate ? "text-[#F28A0A]" : "text-gray-300"}`}
+																	xmlns="http://www.w3.org/2000/svg"
+																	fill="currentColor"
+																	viewBox="0 0 20 20"
+																>
+																	<path d="M10 15l-5.878 3.09 1.12-6.536L0 6.464l6.586-.955L10 0l2.414 5.509L19 6.464l-5.242 4.09 1.12 6.536L10 15z" />
+																</svg>
+															)
+														)}
+													</div>
+												</li>
+											)
+										)}
+									</ul>
+								) : null}
+							</div>
 						</div>
 					</div>
 				)}
