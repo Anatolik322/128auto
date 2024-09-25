@@ -87,7 +87,7 @@ const Footer = () => {
                 </div>
                 <div className="fotter__copyright__container mt-4">
                     <ul className='nav'>
-                        <li className="footer__copyright">©2018 128auto Ltd. |</li>
+                        <li className="footer__copyright"><a href='https://www.128auto.shop/'>©2018 128auto Ltd. |</a></li>
                         <li className="footer__terms__condition"> | Terms & Condition |</li>
                         <li className="footer__privacy__policy">| Privacy Policy</li>
                     </ul>
