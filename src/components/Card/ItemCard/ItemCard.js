@@ -26,7 +26,6 @@ const ItemCard = (props) => {
 
         addProduct(product);
     };
-    console.log(props);
 
     return (
         <Card sx={{ maxWidth: 345, margin: '0 auto', borderRadius: 2, boxShadow: 3, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '640px' }}>

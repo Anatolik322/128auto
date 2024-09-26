@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react';
+import { useState, Fragment, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -20,6 +20,10 @@ const DrawerNav = () => {
     left: false,
   });
 
+  useEffect(() => {
+    console.log("fffffff", state);
+
+  }, [])
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
@@ -64,7 +68,7 @@ const DrawerNav = () => {
             />
             :
             data?.map((item, id) => (
-              <Link to={`/category/${item.category}`} key={id} >
+              <a href={`https://www.128auto.shop/category/${item.category}`} key={id} >
                 <ListItem key={id} disablePadding>
                   <ListItemButton>
                     <ListItemText>
@@ -72,7 +76,7 @@ const DrawerNav = () => {
                     </ListItemText>
                   </ListItemButton>
                 </ListItem>
-              </Link>
+              </a>
             ))}
       </List>
 
@@ -80,6 +84,7 @@ const DrawerNav = () => {
       <Divider />
     </Box>
   );
+
 
   return (
     <Fragment>
