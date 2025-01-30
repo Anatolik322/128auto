@@ -89,9 +89,14 @@ const OrderForm = () => {
 
 	const validatePromo = async (code) => {
 		try {
-			await promoPostData({ code: code }).then((e) => console.log("deda", e));
-			toast.success(`Промокод на ${promoData.promo.amount}грн. успішно застосовано!`);
+			await promoPostData({ code: code }).then((e) => {
+				toast.success(`Промокод на ${promoData?.promo?.amount}грн. успішно застосовано!`);
+
+				console.log("deda", e);
+			});
 		} catch (error) {
+			console.log("eeeerrrr", error);
+
 			toast.error("Такий промокод вже використано, або його не існує");
 		}
 	};
