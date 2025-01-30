@@ -12,10 +12,12 @@ const usePostItem = (endpoint) => {
             const response = await api.post(endpoint, payload);
             setData(response.data);
             setIsLoading(false);
+            return response.data;
         } catch (error) {
             console.error("Error posting data:", error);
             setIsError(true);
             setIsLoading(false);
+            throw error;
         }
     };
 
